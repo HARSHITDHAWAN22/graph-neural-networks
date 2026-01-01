@@ -460,6 +460,141 @@ blindly trusting the input graph.
 
 ---
 
+---
+
+## UNIT 8: Advanced Applications of Graph Neural Networks
+
+After covering the core ideas and advanced techniques of Graph Neural
+Networks, this unit looks at how GNNs are actually used to solve complex
+real-world problems. These are problems where simple prediction is not
+enough and some form of reasoning, structure understanding, or simulation
+is required. GNNs fit naturally here because they can directly model
+relationships and interactions.
+
+---
+
+### 30. Why Advanced GNN Applications Matter
+- Many real-world problems are highly structured and relational.
+- Traditional machine learning models struggle with discrete structures
+  and strong dependencies.
+- GNNs can naturally represent these problems using graphs and message passing.
+
+In this unit, the focus is on three important application areas:
+- Solving hard optimization problems on graphs
+- Understanding and analyzing computer programs
+- Modeling interacting physical systems
+
+---
+
+### 31. Combinatorial Optimization on Graphs
+
+Combinatorial optimization problems involve finding the best solution
+from a very large number of possible combinations. These problems are
+often represented as graphs and are usually computationally expensive.
+
+Typical examples include:
+- Traveling Salesman Problem (TSP)
+- Minimum Vertex Cover
+- Max-Cut
+- Graph coloring
+- Routing and scheduling problems
+
+Why GNNs are useful here:
+- The quality of a solution depends strongly on graph structure.
+- Exact solvers become slow as problem size increases.
+- GNNs can learn good heuristics from previously solved instances.
+
+How GNNs are used in practice:
+1. The optimization problem is first represented as a graph.
+2. A GNN learns embeddings for nodes and edges.
+3. The model predicts which nodes or edges are important.
+4. These predictions guide a solver or help build an approximate solution.
+
+Main advantage:
+- Much faster solutions that generalize to unseen problem instances.
+
+Main limitation:
+- Solutions are approximate and not always optimal.
+- GNNs are often used alongside classical solvers, not as replacements.
+
+---
+
+### 32. Learning Representations of Computer Programs
+
+Computer programs have a rich internal structure, which makes them a good
+fit for graph-based learning approaches.
+
+Programs can be represented using different graph forms such as:
+- Abstract Syntax Trees (AST)
+- Control Flow Graphs (CFG)
+- Data Flow Graphs (DFG)
+
+Why GNNs work well for programs:
+- Program meaning depends more on structure than on raw text.
+- Sequential models miss long-range dependencies in code.
+- GNNs capture both control and data relationships naturally.
+
+Common applications:
+- Bug and vulnerability detection
+- Code similarity and clone detection
+- Program optimization
+- Code recommendation and analysis tools
+
+Typical workflow:
+1. Convert source code into a graph representation.
+2. Nodes represent statements, variables, or operations.
+3. Edges represent control flow or data dependencies.
+4. GNN propagates semantic information across the graph.
+5. The model predicts properties or behaviors of the program.
+
+---
+
+### 33. Reasoning about Interacting Dynamical Systems in Physics
+
+Many physical systems consist of multiple entities that interact with each
+other over time. These interactions can be naturally modeled using graphs.
+
+Examples of such systems include:
+- Particle systems
+- Gravitational systems
+- Molecular dynamics
+- Multi-body physical simulations
+
+Graph representation:
+- Nodes represent physical entities.
+- Edges represent interactions or forces between entities.
+- Node features include quantities like position, velocity, or mass.
+
+How GNNs are applied:
+1. Represent the physical system as a graph.
+2. Use message passing to model interactions between entities.
+3. Update the state of each node over time.
+4. Predict future behavior of the system.
+
+Benefits:
+- Learns interaction rules directly from data.
+- Generalizes well to systems of different sizes.
+- Often more data-efficient than traditional simulators.
+
+Challenges:
+- Requires careful model design.
+- Physical consistency and stability must be maintained.
+
+---
+
+### 34. Key Takeaways from Advanced GNN Applications
+- GNNs go beyond simple prediction tasks and enable reasoning over structure.
+- They are effective for solving hard optimization problems approximately.
+- GNNs can understand program semantics by modeling code as graphs.
+- They can simulate complex physical systems by learning interactions.
+
+Core idea:
+Graph Neural Networks act as neural reasoning models for structured and
+interacting systems.
+
+---
+
+
 
 ## References
 
@@ -473,6 +608,17 @@ blindly trusting the input graph.
    - Dai et al., Adversarial Attacks on Graph Neural Networks
    - Zügner et al., Adversarial Attacks on Node Classification
 
+3. (Discussed within the above book)
+   - Chen et al., FastGCN: Fast Learning with Graph Convolutional Networks via Importance Sampling
+   - Zeng et al., GraphSAINT: Graph Sampling Based Inductive Learning Method
+
+4. (Discussed within the above book)
+   - Xu et al., How Powerful are Graph Neural Networks?
+   - Morris et al., Weisfeiler and Leman Go Neural
+
+5. (Discussed within the above book)
+   - Rong et al., DropEdge: Towards Deep Graph Convolutional Networks
+   - Xu et al., Jumping Knowledge Networks for Graph Representation Learning
 
 
 
